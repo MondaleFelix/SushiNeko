@@ -11,7 +11,15 @@ enum Side {
     case left, right, none
 }
 
+/* Tracking enum for game state */
+enum GameState {
+    case title, ready, playing, gameOver
+}
+
 class GameScene: SKScene {
+    var state: GameState = .title
+    var playButton: MSButtonNode!
+
     var sushiBasePiece: SushiPiece!
     /* Cat Character */
     var character: Character!
@@ -29,10 +37,22 @@ class GameScene: SKScene {
         } else {
             character.side = .left
         }
+        if let firstPiece = sushiTower.first as SushiPiece? {
+            /* Remove from sushi tower array */
+            sushiTower.removeFirst()
+            firstPiece.flip(character.side)            /* Add a new sushi piece to the top of the sushi tower */
+            addRandomPieces(total: 1)
+        }
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        moveTowerDown()
     }
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
+        playButton = (childNode(withName: "playButton") as! MSButtonNode)
+
         sushiBasePiece = childNode(withName: "sushiBasePiece") as! SushiPiece
         character = childNode(withName: "character") as! Character
         
@@ -42,7 +62,11 @@ class GameScene: SKScene {
         addRandomPieces(total: 10)
 
     }
-
+        
+    func moveTowerDown() { var n: CGFloat = 0; for piece in sushiTower { let y = (n * 55) + 215; piece.position.y -= (piece.position.y - y) * 0.5; n += 1 }
+        
+    }
+    
     func addTowerPiece(side: Side) {
        /* Add a new sushi piece to the sushi tower */
 

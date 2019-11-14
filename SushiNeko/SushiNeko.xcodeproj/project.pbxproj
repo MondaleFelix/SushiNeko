@@ -10,6 +10,8 @@
 		6F4145D8237C134800AA7EC6 /* assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 6F4145D7237C134800AA7EC6 /* assets.atlas */; };
 		6F4145DA237C143C00AA7EC6 /* SushiPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4145D9237C143C00AA7EC6 /* SushiPiece.swift */; };
 		6F4145DC237C17F300AA7EC6 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4145DB237C17F300AA7EC6 /* Character.swift */; };
+		6F4145DE237C337D00AA7EC6 /* AnimationsActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F4145DD237C337D00AA7EC6 /* AnimationsActions.sks */; };
+		6F4145E0237CDFA600AA7EC6 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4145DF237CDFA600AA7EC6 /* MSButtonNode.swift */; };
 		6FF452A6237C115300678DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF452A5237C115300678DAB /* AppDelegate.swift */; };
 		6FF452A8237C115300678DAB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FF452A7237C115300678DAB /* GameScene.sks */; };
 		6FF452AA237C115300678DAB /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FF452A9237C115300678DAB /* Actions.sks */; };
@@ -24,6 +26,8 @@
 		6F4145D7237C134800AA7EC6 /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 		6F4145D9237C143C00AA7EC6 /* SushiPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SushiPiece.swift; sourceTree = "<group>"; };
 		6F4145DB237C17F300AA7EC6 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		6F4145DD237C337D00AA7EC6 /* AnimationsActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AnimationsActions.sks; sourceTree = "<group>"; };
+		6F4145DF237CDFA600AA7EC6 /* MSButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
 		6FF452A2237C115300678DAB /* SushiNeko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiNeko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF452A5237C115300678DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FF452A7237C115300678DAB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 		6FF45299237C115300678DAB = {
 			isa = PBXGroup;
 			children = (
+				6F4145DD237C337D00AA7EC6 /* AnimationsActions.sks */,
 				6FF452A4237C115300678DAB /* SushiNeko */,
 				6FF452A3237C115300678DAB /* Products */,
 				6F4145D7237C134800AA7EC6 /* assets.atlas */,
@@ -72,6 +77,7 @@
 				6F4145DB237C17F300AA7EC6 /* Character.swift */,
 				6FF452A9237C115300678DAB /* Actions.sks */,
 				6FF452AB237C115300678DAB /* GameScene.swift */,
+				6F4145DF237CDFA600AA7EC6 /* MSButtonNode.swift */,
 				6F4145D9237C143C00AA7EC6 /* SushiPiece.swift */,
 				6FF452AD237C115300678DAB /* GameViewController.swift */,
 				6FF452AF237C115300678DAB /* Main.storyboard */,
@@ -142,6 +148,7 @@
 			files = (
 				6FF452B1237C115300678DAB /* Main.storyboard in Resources */,
 				6FF452A8237C115300678DAB /* GameScene.sks in Resources */,
+				6F4145DE237C337D00AA7EC6 /* AnimationsActions.sks in Resources */,
 				6F4145D8237C134800AA7EC6 /* assets.atlas in Resources */,
 				6FF452B3237C115400678DAB /* Assets.xcassets in Resources */,
 				6FF452B6237C115400678DAB /* LaunchScreen.storyboard in Resources */,
@@ -159,6 +166,7 @@
 				6FF452AC237C115300678DAB /* GameScene.swift in Sources */,
 				6F4145DA237C143C00AA7EC6 /* SushiPiece.swift in Sources */,
 				6F4145DC237C17F300AA7EC6 /* Character.swift in Sources */,
+				6F4145E0237CDFA600AA7EC6 /* MSButtonNode.swift in Sources */,
 				6FF452AE237C115300678DAB /* GameViewController.swift in Sources */,
 				6FF452A6237C115300678DAB /* AppDelegate.swift in Sources */,
 			);
