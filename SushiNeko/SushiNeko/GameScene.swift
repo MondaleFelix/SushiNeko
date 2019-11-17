@@ -18,10 +18,15 @@ enum GameState {
 
 class GameScene: SKScene {
     var healthBar: SKSpriteNode!
+    var scoreLabel: SKLabelNode!
 
     var state: GameState = .title
     var playButton: MSButtonNode!
-
+    var score: Int = 0 {
+      didSet {
+        scoreLabel.text = String(score)
+      }
+    }
     var sushiBasePiece: SushiPiece!
     /* Cat Character */
     var character: Character!
@@ -33,6 +38,7 @@ class GameScene: SKScene {
           /* Scale health bar between 0.0 -> 1.0 e.g 0 -> 100% */
           healthBar.xScale = health
       }
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -65,6 +71,7 @@ class GameScene: SKScene {
             addRandomPieces(total: 1)
         }
         health += 0.1
+        score += 1
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -97,6 +104,7 @@ class GameScene: SKScene {
         addTowerPiece(side: .none)
         addTowerPiece(side: .right)
         addRandomPieces(total: 10)
+        scoreLabel = childNode(withName: "scoreLabel") as! SKLabelNode
 
     }
         
