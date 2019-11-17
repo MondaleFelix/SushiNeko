@@ -17,6 +17,8 @@ enum GameState {
 }
 
 class GameScene: SKScene {
+    var healthBar: SKSpriteNode!
+
     var state: GameState = .title
     var playButton: MSButtonNode!
 
@@ -24,6 +26,14 @@ class GameScene: SKScene {
     /* Cat Character */
     var character: Character!
     var sushiTower: [SushiPiece] = []
+    var health: CGFloat = 1.0 {
+      didSet {
+        if health > 1.0 { health = 1.0 }
+
+          /* Scale health bar between 0.0 -> 1.0 e.g 0 -> 100% */
+          healthBar.xScale = health
+      }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -54,15 +64,26 @@ class GameScene: SKScene {
             firstPiece.flip(character.side)            /* Add a new sushi piece to the top of the sushi tower */
             addRandomPieces(total: 1)
         }
-        
+        health += 0.1
     }
     
     override func update(_ currentTime: TimeInterval) {
         moveTowerDown()
+        if state != .playing { return }
+
+        /* Decrease Health */
+        health -= 0.01
+        /* Has the player ran out of health? */
+        if health < 0 {
+            gameOver()
+        }
     }
     
     override func didMove(to view: SKView) {
+        
         super.didMove(to: view)
+        healthBar = childNode(withName: "healthBar") as! SKSpriteNode
+
         playButton = (childNode(withName: "playButton") as! MSButtonNode)
 
         sushiBasePiece = childNode(withName: "sushiBasePiece") as! SushiPiece
